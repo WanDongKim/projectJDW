@@ -7,7 +7,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :status
       t.integer :size
       t.datetime :date
-      t.belongs_to :user
+      t.integer :users
+      t.belongs_to :host
 
       t.timestamps
     end

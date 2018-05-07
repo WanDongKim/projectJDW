@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_033540) do
+ActiveRecord::Schema.define(version: 2018_05_05_231151) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,18 +38,19 @@ ActiveRecord::Schema.define(version: 2018_05_04_033540) do
     t.string "status"
     t.integer "size"
     t.datetime "date"
-    t.integer "user_id"
+    t.integer "users"
+    t.bigint "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
+    t.index ["host_id"], name: "index_events_on_host_id"
   end
 
   create_table "hosts", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "address"
-    t.string "phoneNum"
-    t.string "category"
+    t.string "name", default: "", null: false
+    t.string "email", default: ""
+    t.string "address", default: ""
+    t.string "phoneNum", default: ""
+    t.string "category", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_033540) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

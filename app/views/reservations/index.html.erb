@@ -1,0 +1,18 @@
+<h1>Reservations#index</h1>
+<p>Find me in app/views/reservations/index.html.erb</p>
+
+<%= @event.name %></br>
+
+
+
+  <%= form_for :reservation do |f| %>
+    Name : <%= f.text_field :name %></br>
+    How many? : <%= f.select :num, options_for_select(@ary)  %></br>
+  <% end %>
+
+
+
+<p> Price : $30 * <%= @num %> </p>
+<%= form_tag event_reservations_path(@event.id), method: :post, class: "right" do %>
+  <button class="btn">submit</button>
+<% end %>
