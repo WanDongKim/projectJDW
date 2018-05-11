@@ -1,10 +1,26 @@
-<h1>Show event</h1>
+<h2>Event Information</h2>
 
-name  : <%= @event.name%></br>
-description : <%= @event.description %></br>
-size : <%= @event.size %></br>
-date : <%= @event.date %></br></br>
+<table class='table table-bordered'>
+<tr>
+  <th>Name</th>
+  <td><%= @event.name %></td>
+</tr>
+<tr>
+  <th>Description</th>
+  <td><%= @event.description %></td>
+</tr>
+<tr>
+  <th>Size</th>
+  <td><%= @event.size  %></td>
+</tr>
+<tr>
+  <th>Date</th>
+  <td><%= @event.date %></td>
+</tr>
+</table>
 
+<%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
+<%= link_to 'Back', events_path, class: 'button' %>
 <%= form_tag event_reservations_path(@event.id), method: :get, class: "right" do %>
   <button class="btn">Join this event</button>
 <% end %>

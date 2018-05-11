@@ -1,8 +1,8 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @event = Event.find_by(id: params[:event_id])
+  before_action :set_reservation
 
+  def index
     @ary = Array.new()
     for i in 1..@event.size do
       @ary.push(i)
@@ -17,4 +17,10 @@ class ReservationsController < ApplicationController
 
   def create
   end
+
+  private
+  def set_reservation
+    @event = Event.find_by(id: params[:event_id]) if params[:event_id].present?
+  end
+
 end
