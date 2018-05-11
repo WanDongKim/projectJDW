@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -50,7 +50,7 @@ class EventsController < ApplicationController
     end
   end
 
-  
+
   private
     def set_event
       @event = Event.find_by(id: params[:id]) if params[:id].present?
