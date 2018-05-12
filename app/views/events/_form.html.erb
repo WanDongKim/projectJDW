@@ -9,6 +9,8 @@
     <%= f.input :date %>
     <%= f.input :host_id %>
 
+    <%= f.input :picture, as: :file %>
+    <%= f.hidden_field :picture_cache %>
     <%= f.button :submit %>
   </div>
 

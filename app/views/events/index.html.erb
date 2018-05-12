@@ -1,18 +1,9 @@
-<!-- <div class="container">
-  <div class="row">
-    <% if @events.nil? %>
-      <%= "There is no event" %>
-    <% else %>
-      <% @events.each do |event| %>
-        <li><a href ="<%= event_path(event.id) %>"><%= event.name %></a></li>
-      <% end %>
-    <% end %>
-  </div>
-</div> -->
+
 <div>
   <table class="table">
     <thead>
       <tr>
+        <th>Image</th>
         <th>Title</th>
         <th>Description</th>
         <th>Size</th>
@@ -24,6 +15,7 @@
     <tbody>
       <% @events.each do |event| %>
         <tr>
+          <td><%= link_to(image_tag(event.picture_url(:thumb)))if event.picture? %></td>
           <td><%= event.name %></td>
           <td><%= event.description %></td>
           <td><%= event.size %></td>
@@ -38,6 +30,5 @@
   </table>
 
   <br>
-
-  <%= link_to 'New Event', new_event_path, class: 'button' %>
+  <%= link_to 'New Event', new_event_path, class: 'btn-default' %>
 </div>
