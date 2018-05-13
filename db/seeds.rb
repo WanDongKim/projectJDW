@@ -21,3 +21,5 @@ Event.create! name: 'Seventh event', description: '7th eve', status: 'Not starte
 Event.create! name: 'Eighth event', description: '8th eve', status: 'Not started yet', size: 3, date: '1/1/2018', host_id: 1
 Event.create! name: 'Nineth event', description: '9th eve', status: 'Not started yet', size: 3, date: '1/1/2018', host_id: 1
 Event.create! name: 'Tenth event', description: '10th eve', status: 'Not started yet', size: 3, date: '1/1/2018', host_id: 1
+
+puts Event.all

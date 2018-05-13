@@ -13,7 +13,6 @@
   <body>
     <%= render "layouts/header" %>
     <nav>
-      <div class="container">
         <ul>
             <% if user_signed_in? %>
               <li><%= current_user.name %></li>
@@ -24,10 +23,7 @@
           <% end %>
         </ul>
     </nav>
-
-    <hr/>
-
-    <div class="container">
+    <div class="container-fluid">
       <%= yield %>
     </div>
   </body>

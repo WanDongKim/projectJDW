@@ -1,3 +1,26 @@
+<div class="container-fluid">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag("jumbo1.jpg", class: "d-block w-100") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("jumbo1.jpg", class: "d-block w-100") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("jumbo1.jpg", class: "d-block w-100") %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
 <div>
   <table class="table">
@@ -14,17 +37,17 @@
 
     <tbody>
       <% @events.each do |event| %>
-        <tr>
-          <td><%= link_to(image_tag(event.picture_url(:thumb)))if event.picture? %></td>
-          <td><%= event.name %></td>
-          <td><%= event.description %></td>
-          <td><%= event.size %></td>
-          <td>
-            <%= link_to 'Show', event, class: 'button' %>
-            <%= link_to 'Edit', edit_event_path(event), class: 'button' %>
-            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
-          </td>
-        </tr>
+      <tr>
+        <td><%= link_to(image_tag(event.picture_url(:thumb)))if event.picture? %></td>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.size %></td>
+        <td>
+          <%= link_to 'Show', event, class: 'button' %>
+          <%= link_to 'Edit', edit_event_path(event), class: 'button' %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+        </td>
+      </tr>
       <% end %>
     </tbody>
   </table>
