@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'carrierwave'
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'simple_form'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'

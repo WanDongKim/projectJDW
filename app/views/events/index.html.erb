@@ -51,7 +51,8 @@
       <% end %>
     </tbody>
   </table>
-
+  <br>
+    <%= will_paginate @posts %>
   <br>
   <%= link_to 'New Event', new_event_path, class: 'btn-default' %>
 </div>
