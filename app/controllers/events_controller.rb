@@ -56,6 +56,6 @@ class EventsController < ApplicationController
       @event = Event.find_by(id: params[:id]) if params[:id].present?
     end
     def event_params
-      params.require(:event).permit(:name, :description, :status, :size, :date, :host_id, :picture, :picture_cache)
+      params.require(:event).permit(:name, :description, :status, :size, :date, :host_id, :picture, :picture_cache, :price)
     end
 end

@@ -2,7 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    Event Name : <%= @event.name %>
+    Event Name : <%= @event.name %><br/>
+    Fee : $<%= @event.price %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :event_id, value: @event.id %>
     </div>
