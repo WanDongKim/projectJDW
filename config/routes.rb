@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :reservations
   end
+  resources :reservations
   devise_for :admins
   devise_for :users
 

@@ -1,0 +1,14 @@
+<%= simple_form_for(@reservation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    Event Name : <%= @event.name %>
+
+    <%= f.hidden_field :event %>
+    <%= f.hidden_field :user %>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>  </div>
+
+<% end %>

@@ -21,6 +21,6 @@
 
 <%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
 <%= link_to 'Back', events_path, class: 'button' %>
-<%= form_tag event_reservations_path(@event.id), method: :get, class: "right" do %>
+<%= form_tag new_event_reservation_path(@event.id), method: :GET, class: "right" do %>
   <button class="btn">Join this event</button>
 <% end %>
