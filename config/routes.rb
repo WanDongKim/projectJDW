@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  root 'events#index'
+    root 'events#index'
 
   resources :events do
-    resources :reservations
+    resources :reservations do
+      collection do
+        # post 'express_checkout'
+        resources :transactions, only: [:new, :create, :show]
+      end
+    end
   end
-  resources :reservations
+
   devise_for :admins
   devise_for :users
 

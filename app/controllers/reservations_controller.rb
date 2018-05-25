@@ -13,9 +13,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     respond_to do |format|
       if @reservation.save
+        flash[:notice] = "Payment Done Successfully"
         format.html { redirect_to (@event.present? ? [@reservation.event, @reservation] : @reservation), notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
+        flash[:notice] = "Succesfull"
         format.html { render :new }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
@@ -29,8 +31,8 @@ class ReservationsController < ApplicationController
     end
 
     @num = params[:num]
-
   end
+
 
   private
   def set_reservation

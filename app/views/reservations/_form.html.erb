@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     Event Name : <%= @event.name %><br/>
-    Fee : $<%= @event.price %>
+    Fee : $<%= @event.price / 100 %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :event_id, value: @event.id %>
     </div>
@@ -12,3 +12,4 @@
   </div>
 
 <% end %>
+<%=link_to "Checkout", new_event_transaction_path, class: "button"%>

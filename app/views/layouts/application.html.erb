@@ -5,13 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- https://bootswatch.com/minty/ -->
+    <%= include_gon %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
   </head>
 
   <body>
     <%= render "layouts/header" %>
+    <%= Gon::Base.render_data({}) %>
+
     <nav>
         <ul>
             <% if user_signed_in? %>
